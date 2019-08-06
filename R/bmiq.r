@@ -23,6 +23,7 @@ meffonym.bmiq.calibration <- function(x,standard,...) {
     if (length(missing.sites) > 0) {
         if (length(missing.sites) == length(standard))
             stop("All CpG sites for DNAm clock are missing.")
+        warning("Some missing sites:", length(missing.sites))
         x <- rbind(x,
                    t(sapply(standard[missing.sites], rep, ncol(x))))
     }
