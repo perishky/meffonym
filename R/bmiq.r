@@ -19,7 +19,13 @@
 #' 
 #' @export 
 meffonym.bmiq.calibration <- function(x,standard,...) {
-    stopifnot(all(names(standard) %in% rownames(x)))
+    missing.sites <- setdiff(names(standard), rownames(x))
+    if (length(missing.sites) > 0) {
+        if (length(missing.sites) == length(standard))
+            stop("All CpG sites for DNAm clock are missing.")
+        x <- rbind(x,
+                   t(sapply(standard[missing.sites], rep, ncol(x))))
+    }
     x <- x[names(standard),]
     
     if (any(is.na(x))) {
