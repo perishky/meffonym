@@ -1,0 +1,153 @@
+# DNA methylation age and acceleration
+
+```{r, echo=FALSE}
+library(knitr)
+library(Cairo)
+opts_chunk$set(warning=FALSE, fig.width=6, fig.height=6, dev="CairoPNG")
+```
+
+## Dataset
+We will analyze data used to derive the Hannum et al.
+DNA methylation age predictor.
+
+> Hannum G, Guinney J, Zhao L, Zhang L et al. Genome-wide methylation
+> profiles reveal quantitative views of human aging rates. Mol Cell 2013
+> Jan 24;49(2):359-67. PMID: 23177740
+
+Retrieve the data from the Gene Expression Omnibus (GEO) website
+(http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE40279).
+
+```{r}
+source(system.file("read-gse-matrix-file.r", package="meffonym"))
+
+file <-  "GSE40279_series_matrix.txt.gz"
+gse <- "GSE40279"
+url <- file.path("ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE40nnn", gse,
+                 "matrix", file)
+
+if (!file.exists(file))
+    download.file(url, destfile=file) ## 1.2Gb file
+
+if (!exists("hannum"))
+    hannum <- read.gse.matrix.file(file) ## ~15 minutes
+```
+
+Extract phenotypes/exposures.
+```{r}
+extract.characteristic <- function(ch) {
+    sub("[^:]+: (.*)", "\\1", ch)
+}
+hannum$samples$age <- as.numeric(extract.characteristic(hannum$samples$characteristics_ch1))
+hannum$samples$gender <- extract.characteristic(hannum$samples$characteristics_ch1.3)
+hannum$samples$ethnicity <- extract.characteristic(hannum$samples$characteristics_ch1.4)
+```
+
+## Calculate scores for all available models
+
+```{r}
+library(meffonym)
+
+scores <- cbind(age=hannum$samples$age,
+                sapply(meffonym.models(), function(model) {
+                    meffonym.score(hannum$dnam, model)$score
+                }))
+```
+
+Calculate correlations between scores.
+```{r}
+cor(scores)
+```
+
+Calculate differences between biological and estimated age.
+```{r}
+apply(scores[,-1], 2, function(estimate) quantile(estimate-scores[,"age"]))
+```
+
+## Calculate age acceleration
+
+Age accelaration is obtained by adjusting age estimates for actual age.
+```{r}
+age.scores <- scores[,c("age.horvath","age.hannum")]
+    
+acc <- apply(age.scores, 2, function(estimate) {
+    residuals(lm(estimate ~ scores[,"age"]))
+})
+```
+
+Test age acceleration differences between the sexes.
+Both Hannum and Horvath scores show
+greater acceleration in males than females.
+```{r}
+t(sapply(colnames(acc), function(name) {
+    acc <- acc[,name]
+    coef(summary(lm(acc ~ gender, data=hannum$samples)))["genderM",]
+}))
+```
+
+## Obtaining estimates identical to the online Horvath clock
+
+The following estimates are equivalent to that of the Horvath clock.
+The calculation can be time consuming, so we will obtain estimates
+for only the first 10.
+```{r, results="hide", message=F}
+horvath.est <- meffonym.horvath.age(hannum$dnam[,1:10]) ## 1-2 minutes
+```
+
+These estimates are obtained in two steps: 
+normalizing the methylation data to 'gold standard' used by Horvath when
+developing the model, and then applying the model in the normalized data.
+```{r, results="hide", message=F}
+standard <- meffonym.horvath.standard()
+## step 1: normalization (1-2 minutes)
+dnam.norm <- meffonym.bmiq.calibration(hannum$dnam[,1:10], standard) 
+## step 2: model application
+equiv.est <- meffonym.score(dnam.norm, "age.horvath")
+```
+
+They are the same.
+```{r}
+cor(equiv.est$score, horvath.est$score)
+equiv.est$score - horvath.est$score
+```
+
+Normalization in this case has a fairly minor effect
+on the age estimates.
+```{r}
+cor(age.scores[1:10,"age.horvath"], horvath.est$score)
+sort(age.scores[1:10, "age.horvath"] - horvath.est$score)
+```
+
+## Calculate scores for a new model
+
+```{r}
+model <- meffonym.get.model("age.horvath")
+idx <- order(abs(model$coefficients), decreasing=T)[1:10]
+model$coefficients <- model$coefficients[idx]
+meffonym.add.model("age.horvath.10",
+                     variables=names(model$coefficients),
+                     coefficients=model$coefficients,
+                     description="Horvath model with only the top 10 effect sizes.")
+```
+
+Estimate age with that new model.
+```{r}
+ten.est <- meffonym.score(hannum$dnam, "age.horvath.10")
+```
+
+The result is obviously similar but 10 CpG sites is obviously
+not the same as 353.
+```{r}
+cor(ten.est$score, scores[,"age.horvath"])
+```
+
+## Document generated from R Markdown
+
+```{r, eval=F}
+library(knitr)
+library(markdown)
+
+options(markdown.HTML.options=union('toc', getOption("markdown.HTML.options")))
+
+knit("age-tutorial.rmd", "age-tutorial.md")
+markdownToHTML("age-tutorial.md","age-tutorial.html", stylesheet="style.css")
+```
