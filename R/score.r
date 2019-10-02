@@ -8,19 +8,20 @@
 #' @export
 meffonym.score <- function(x, model) {
     stopifnot(is.matrix(x))
-
-    x <- impute.matrix(x,1) ## replace missing values with mean values
     
     ret <- meffonym.get.model(model)
     ret$name <- model
 
     sites <- intersect(rownames(x), names(ret$coefficients))
 
+    x <- x[sites,,drop=F]
+    x <- impute.matrix(x,1) ## replace missing values with mean values
+    
     score <- rep(NA, ncol(x))
     if (length(sites) == 1)
-        score <- ret$intercept + ret$coefficients[sites] * x[sites,]
+        score <- ret$intercept + ret$coefficients[sites] * as.vector(x)
     if (length(sites) > 1)
-        score <- ret$intercept + as.vector(rbind(ret$coefficients[sites]) %*% x[sites,,drop=F])
+        score <- ret$intercept + as.vector(rbind(ret$coefficients[sites]) %*% x)
 
     if (model == "age.horvath") {
         anti.trafo <- function(x,adult.age=20) {
