@@ -3,11 +3,14 @@
 #' @param x DNA methylation matrix (rows=CpG sites, columns=samples).
 #' @param model Model name from available list (\code{\link{meffonym.models}()}).
 #' @return Scores derived for each sample in \code{x}.
+#' Missing values in \code{x} are replaced with the mean value of the row.
 #'
 #' @export
 meffonym.score <- function(x, model) {
     stopifnot(is.matrix(x))
 
+    x <- impute.matrix(x,1) ## replace missing values with mean values
+    
     ret <- meffonym.get.model(model)
     ret$name <- model
 
