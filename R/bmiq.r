@@ -29,13 +29,12 @@ meffonym.bmiq.calibration <- function(x,standard,...) {
     }
     x <- x[names(standard),]
     
-    if (any(is.na(x))) {
-        dn <- dimnames(x)
-        x <- impute.knn(x)$data
-        dimnames(x) <- dn
-    }
-    t(BMIQcalibration(t(x),
-                      goldstandard.beta=standard,
-                      ...))
+    if (any(is.na(x))) 
+        x <- impute.matrix(x)
+    
+    t(BMIQcalibration
+      (t(x),
+       goldstandard.beta=standard,
+       ...))
 }
 

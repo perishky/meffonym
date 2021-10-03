@@ -8,11 +8,12 @@ meffonym.models <- function() ls(models.global)
 #' @param name Name of the model.
 #' @param variables Names of CpG sites included in the model.
 #' @param coefficients Coefficients of the CpG sites in the model.
+#' @param intercept Model intercept (Default: 0).
 #' @param description Text description of the model, e.g. publication.
 #'
 #' @export
-meffonym.add.model <- function(name, variables, coefficients, description) {
-    model <- create.model(variables, coefficients, description)
+meffonym.add.model <- function(name, variables, coefficients, description, intercept=0) {
+    model <- create.model(variables, coefficients, intercept=intercept, description=description)
     assign(name, model, envir=models.global)
     invisible(TRUE)
 }
@@ -28,39 +29,57 @@ meffonym.get.model <- function(name) {
     get(name, envir=models.global)
 }
 
-create.model <- function(variables, coefficients, description) {
-    stopifnot(length(variables) == length(coefficients))
-    names(coefficients) <- variables
-    list(intercept=coefficients[1], coefficients=coefficients[-1], description=description)
+create.model <- function(vars, coefs, intercept, description) {
+    model <- list()
+    if (is.vector(coefs)) {
+        stopifnot(length(vars) == length(coefs))
+        names(coefs) <- vars
+        model$intercept=intercept
+        vars <- c('intercept', vars)
+    } else {
+        stopifnot(is.matrix(coefs) || is.data.frame(coefs))
+        rownames(coefs) <- vars
+    }
+    model$vars <- vars
+    model$coefs <- coefs
+    model$description <- description
+    model
 }
 
 load.models <- function(pkgname) {
-    ## https://static-content.springer.com/esm/art%3A10.1186%2Fs13059-016-1068-z/MediaObjects/13059_2016_1068_MOESM3_ESM.csv
-    path <- system.file("knight", package=pkgname)                               
-    model <- read.csv(file.path(path, "model.csv"), stringsAsFactors=F)
-    meffonym.add.model("ga.knight", model$CpGmarker, model$CoefficientTraining,
-                         readLines(file.path(path, "readme.txt")))
+    filename <- system.file("models.csv", package=pkgname)
+    if (!file.exists(filename))
+        return
     
-    ## https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3780611/bin/NIHMS418935-supplement-02.xlsx
-    path <- system.file("hannum", package=pkgname)
-    model <- read.csv(file.path(path, "hannum-model.csv"), stringsAsFactors=F)
-    meffonym.add.model("age.hannum", c("intercept", model$Marker), c(0, model$Coefficient),
-                         readLines(file.path(path, "readme.txt")))
-    
-    ## see inst/bohlin/retrieve.r
-    path <- system.file("bohlin", package=pkgname)
-    model <- read.csv(file.path(path, "model-1se.csv"), stringsAsFactors=F)
-    meffonym.add.model("ga.bohlin.1se", model$cpg, model$coefficient,
-                         readLines(file.path(path, "readme.txt")))
-    
-    path <- system.file("bohlin", package=pkgname)
-    model <- read.csv(file.path(path, "model-min.csv"), stringsAsFactors=F)
-    meffonym.add.model("ga.bohlin.min", model$cpg, model$coefficient, readLines(file.path(path, "readme.txt")))
+    path <- dirname(filename)
+    models <- read.csv(filename, stringsAsFactors=F)
 
-    ## http://labs.genetics.ucla.edu/horvath/dnamage/AdditionalFile3.csv
-    path <- system.file("horvath", package=pkgname)
-    model <- read.csv(file.path(path, "AdditionalFile3.csv"), stringsAsFactors=F)
-    meffonym.add.model("age.horvath", model$CpGmarker, model$CoefficientTraining,
-                         readLines(file.path(path, "readme.txt")))
+    for (i in 1:nrow(models)) {
+        filename <- file.path(path, models$filename[i])
+        cat("loading", filename, " ...\n")
+        coefs <- read.csv(filename, stringsAsFactors=F)
+        if (ncol(coefs) == 2) {
+            cpgs <- coefs$cpg
+            coefs <- coefs$coef
+            if (!any(grepl("intercept", cpgs, ignore.case=T))) {
+                cpgs <- c("intercept", cpgs)
+                coefs <- c(0,coefs)
+            }
+            intercept <- coefs[1]
+            cpgs <- cpgs[-1]
+            coefs <- coefs[-1]
+        }
+        else {
+            cpgs <- coefs$cpg
+            coefs$cpg <- NULL
+            intercept <- 0
+        }
+        meffonym.add.model(
+            models$name[i],
+            cpgs,
+            coefs,
+            intercept=intercept,
+            description=paste(paste(colnames(models), models[i,], sep=":"), collapse=","))
+    }
 }
 

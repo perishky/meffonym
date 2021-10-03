@@ -15,11 +15,3 @@ Scores derived for each sample in \code{x}.
 \description{
 Horvath DNA methylation age estimate
 }
-\examples{
-## Equivalent to the following:
-x <- ... ## methylation matrix
-standard <- meffonym.horvath.standard()
-x.norm <- meffonym.bmiq.calibration(x, standard)
-ret <- meffonym.score(x, "age.horvath")
-
-}

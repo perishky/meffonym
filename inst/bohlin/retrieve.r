@@ -20,8 +20,8 @@ extract.model <- function(fit, s) {
 model.1se <- extract.model(UL.mod.cv$glmnet.fit, s=UL.mod.cv$lambda.1se)
 model.min <- extract.model(UL.mod.cv$glmnet.fit, s=UL.mod.cv$lambda.min)
 
-write.csv(data.frame(cpg=names(model.1se), coefficient=model.1se), row.names=F, file="model-1se.csv")
-write.csv(data.frame(cpg=names(model.min), coefficient=model.min), row.names=F, file="model-min.csv")
+write.csv(data.frame(cpg=names(model.1se), coef=model.1se), row.names=F, file="model-1se.csv")
+write.csv(data.frame(cpg=names(model.min), coef=model.min), row.names=F, file="model-min.csv")
 
 unlink(filename)
 unlink("sysdata.rda")

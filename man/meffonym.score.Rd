@@ -4,15 +4,43 @@
 \alias{meffonym.score}
 \title{Calculate DNA methylation scores}
 \usage{
-meffonym.score(x, model)
+meffonym.score(
+  x,
+  model,
+  calibrate = F,
+  scale = model \%in\% c("zhang", "zhang.blup"),
+  transform = NULL,
+  adjust = NULL
+)
 }
 \arguments{
-\item{x}{DNA methylation matrix (rows=CpG sites, columns=samples).}
+\item{x}{DNA methylation matrix (rows=CpG sites, columns=samples).
+Missing values in \code{x} will be replaced with the mean value of the row.}
 
-\item{model}{Model name from available list (\code{\link{meffonym.models}()}).}
+\item{model}{Model name from available list
+(\code{\link{meffonym.models}()}).}
+
+\item{calibrate}{Prior to calculating scores, calibrate DNA methylation
+using BMIQ as in Horvath's DNAm age calculator (Default: FALSE).}
+
+\item{scale}{Prior to calculating scores, standardize methylation levels,
+i.e. subtract mean and divide by standard deviation for each CpG site
+(Default: FALSE).}
+
+\item{transform}{After calculating scores, transform scores
+using this function. Default is \code{\link{anti.trafo}} for
+the "horvath", "skin" and "pedbe" models, otherwise \code{NULL}.}
+
+\item{adjust}{Data frame with variables for adjusting the final score.
+Default is \code{TRUE} for 'zhang' and 'zhang.blup',  otherwise \code{FALSE}.}
 }
 \value{
-Scores derived for each sample in \code{x}.
+List containing the list of CpG sites actually used
+(\code{sites}) in case
+some CpG sites included in the model are missing from \code{x},
+the resulting score (\code{score}) for each sample in the dataset.
+If \code{adjust} is not \code{NULL}, then the score prior to adjustment
+will also be included in the return list (\code{raw}).
 }
 \description{
 Calculate DNA methylation scores

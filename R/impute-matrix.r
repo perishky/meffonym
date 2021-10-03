@@ -1,8 +1,13 @@
 # to impute missing values with row means
-# x <- impute.matrix(x,1)
+# x <- impute.mean(x,1)
 # to impute missing values with column means
-# x <- impute.matrix(x,2)
-impute.matrix <- function(x, margin=1, fun=function(x) mean(x, na.rm=T)) {
+# x <- impute.mean(x,2)
+impute.mean <- function(
+    x,
+    margin=1,
+    fun=function(x) mean(x, na.rm=T),
+    na.rm=F) {
+    
     if (margin == 2) x <- t(x)
     
     idx <- which(is.na(x) | !is.finite(x), arr.ind=T)
@@ -15,5 +20,25 @@ impute.matrix <- function(x, margin=1, fun=function(x) mean(x, na.rm=T)) {
     }
 
     if (margin == 2) x <- t(x)
+
+    if (na.rm==T) {
+        if (margin == 1) { ## drop rows with all missing values
+            idx <- which(!is.na(x[,1]))
+            x <- x[idx,,drop=F]
+        }
+        else { ## drop columns with all missing values
+            idx <- which(!is.na(x[1,]))
+            x <- x[,idx,drop=F]
+        }
+    }
+    
+    x
+}
+
+## impute matrix values using knn
+impute.matrix <- function(x) {
+    dn <- dimnames(x)
+    x <- impute.knn(x)$data
+    dimnames(x) <- dn
     x
 }

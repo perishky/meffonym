@@ -1,5 +1,5 @@
 Package: meffonym
-Version: 1.0.0
+Version: 1.1.0
 Title: DNA methylation exposure and phenotypic archive
 Description: Algorithms for calculating published DNA methylation biomarkers
 Authors@R: c(person("Matthew", "Suderman", role = c("cre", "aut"),
@@ -7,10 +7,11 @@ Authors@R: c(person("Matthew", "Suderman", role = c("cre", "aut"),
 Author: Matthew Suderman <matthewsuderman@hotmail.com> [cre, aut],
 Maintainer: Matthew Suderman <matthewsuderman@hotmail.com>
 Depends: RPMM,
-	 impute
+	 impute,
+         methods	
 Suggests: 
 License: 
 URL: 
 LazyData: yes
 biocViews: DNAMethylation, microarray, biomarker
-RoxygenNote: 6.1.0
+RoxygenNote: 7.0.2

@@ -10,10 +10,3 @@ meffonym.horvath.standard()
 Obtained from
 \url{http://labs.genetics.ucla.edu/horvath/dnamage/probeAnnotation21kdatMethUsed.csv}.
 }
-\examples{
-x <- ... ## methylation matrix
-standard <- meffonym.horvath.standard()
-x.norm <- meffonym.bmiq.calibration(x, standard)
-ret <- meffonym.score(x, "age.horvath")
-
-}

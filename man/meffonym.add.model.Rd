@@ -4,7 +4,7 @@
 \alias{meffonym.add.model}
 \title{Add or update set of available models}
 \usage{
-meffonym.add.model(name, variables, coefficients, description)
+meffonym.add.model(name, variables, coefficients, description, intercept = 0)
 }
 \arguments{
 \item{name}{Name of the model.}
@@ -14,6 +14,8 @@ meffonym.add.model(name, variables, coefficients, description)
 \item{coefficients}{Coefficients of the CpG sites in the model.}
 
 \item{description}{Text description of the model, e.g. publication.}
+
+\item{intercept}{Model intercept (Default: 0).}
 }
 \description{
 Add or update set of available models

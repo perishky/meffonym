@@ -6,3 +6,6 @@ PMID: 24138928
 
 Derived from scripts and files provided here:
 https://labs.genetics.ucla.edu/horvath/dnamage/
+
+Model is here:
+https://horvath.genetics.ucla.edu/html/dnamage/AdditionalFile3.csv
