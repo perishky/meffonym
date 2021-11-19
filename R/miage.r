@@ -45,7 +45,7 @@ miage <- function(
 
     optimize.f <- function(init, xj) {
         tryCatch({
-            ret <- methods::optim(
+            ret <- stats::optim(
                 par=init, 
                 fn=objective.f,
                 gr=derivative.f,
@@ -63,7 +63,7 @@ miage <- function(
         })
     }
     
-    sapply(1:ncol(beta), function(j) {
+    sapply(1:ncol(x), function(j) {
         ret <- lapply(inits, optimize.f, xj=x[,j])
         idx <- which.min(sapply(ret, function(ret) ret$ss))
         if (!is.na(idx))

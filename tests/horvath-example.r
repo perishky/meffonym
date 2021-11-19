@@ -11,7 +11,14 @@ datClock <- read.csv(file.path(url,"AdditionalFile3.csv"))
 
 source(file.path(url, "NORMALIZATION.R"))
 
-dat1 <- read.csv(file.path(url, "MethylationDataExample55.csv"))
+
+dnam.url <- file.path(url, "dat0BloodIllumina450K.zip")
+filename <- basename(dnam.url)
+download.file(dnam.url, destfile=filename)
+dat1 <- read.csv(unz(filename, sub("zip","csv",filename)))
+colnames(dat1)[1] <- "ProbeID"
+#dat1 <- read.csv(file.path(url, "MethylationDataExample55.csv"))
+
 nSamples <- ncol(dat1)-1
 normalizeData <- TRUE
 
@@ -54,6 +61,7 @@ rm(anti.trafo,
    datMethClock0,
    datMethUsedNormalized,
    datout,
+   dimnames1,
    fastImputation,
    lab1,
    maxMethBySample,
@@ -73,5 +81,4 @@ rm(anti.trafo,
    selectXchromosome,
    trafo,
    url,
-   website.ret,
    XchromosomalCpGs)

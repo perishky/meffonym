@@ -68,14 +68,18 @@ meffonym.score <- function(
             stop("x does not contain data for CpG sites in the model")
     }
 
-    if (length(sites) < length(ret$vars))
+    num.missing <- length(setdiff(names(ret$coefs), sites))
+    if (num.missing)
         ## let user know how many sites being used for the model
         warning(paste("Dataset missing",
-                      nrow(ret)-length(sites),
-                      "CpG sites in the model."))    
+                      num.missing,
+                      "CpG sites for model", model))    
 
-    if (scale) 
-        x <- apply(x,1,scale)
+    if (scale) {
+        cols <- colnames(x)
+        x <- t(apply(x,1,scale))
+        colnames(x) <- cols
+    }
     
     if (model == "miage") {
         score <- miage(
@@ -87,7 +91,7 @@ meffonym.score <- function(
     else if (model == "epitoc") {    
         score <- colMeans(x)
     }
-    else if (model == "epictoc2") {
+    else if (model == "epitoc2") {
         beta0 <- ret$coefs[sites,"beta0"]
         delta <- ret$coefs[sites,"delta"]
         coefs <- diag(1/(delta*(1-beta0)))
