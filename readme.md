@@ -25,7 +25,7 @@ cor(ret$score, age)
 
 ## Current list of models
 
-[inst/model.csv](models.csv)
+[models.csv](inst/models.csv)
 
 ## For developers
 
