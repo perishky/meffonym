@@ -23,7 +23,9 @@ cor(ret$score, age)
 ## [1] 0.9342
 ```
 
-## [inst/model.csv](Current list of models)
+## Current list of models
+
+[inst/model.csv](models.csv)
 
 ## For developers
 
