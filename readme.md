@@ -48,3 +48,7 @@ cor(ret$score, age)
 |skin          |fibroblasts       |age                 |10.18632/aging.101508              |https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6075434/bin/aging-10-101508-s005.csv                                     |
 |zhang         |blood             |age                 |10.1186/s13073-019-0667-1          |https://github.com/qzhang314/DNAm-based-age-predictor                                                                 |
 |zhang.blup    |blood             |age                 |10.1186/s13073-019-0667-1          |https://github.com/qzhang314/DNAm-based-age-predictor                                                                 |
+
+## For developers
+
+Models can be added temporarily to the package using `meffonym.add.models()`.  However, these models will disappear as soon as R is exited or `meffonym` is reloaded.  To add a model so that it persists, create a new folder and add the model definition to [inst](inst) and add a new row for the model in [inst/models.csv](inst/models.csv).  The model definition is encoded in a csv file with two columns, `cpg` and `coef`.  One row can optionally provide a model intercept with the `cpg` name 'intercept'. 
