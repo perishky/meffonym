@@ -19,3 +19,5 @@ dnamtl,blood,telomere length,10.18632/aging.102173,https://www.ncbi.nlm.nih.gov/
 zhang,blood,age,10.1186/s13073-019-0667-1,https://github.com/qzhang314/DNAm-based-age-predictor,zhang/coef-en.csv
 zhang.blup,blood,age,10.1186/s13073-019-0667-1,https://github.com/qzhang314/DNAm-based-age-predictor,zhang/coef-blup.csv
 miage,blood,stem cell divisions,10.1080/15592294.2017.1389361,http://www.columbia.edu/~sw2206/softwares/mitotic_age_R_code.zip,miage/coefs.csv
+richard-huang-sbp,blood,systolic blood pressure,10.1016/j.ajhg.2017.09.028,NA,richard-huang-sbp/richard-huang-sbp.csv
+richard-huang-dbp,blood,diastolic blood pressure,10.1161/HYPERTENSIONAHA.120.14973,NA,richard-huang-dbp/richard-huang-dbp.csv
