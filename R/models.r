@@ -59,24 +59,24 @@ load.models <- function(pkgname) {
         cat("loading", filename, " ...\n")
         coefs <- read.csv(filename, stringsAsFactors=F)
         if (ncol(coefs) == 2) {
-            cpgs <- coefs$cpg
+            pred.vars <- coefs$pred.var
             coefs <- coefs$coef
-            if (!any(grepl("intercept", cpgs, ignore.case=T))) {
-                cpgs <- c("intercept", cpgs)
+            if (!any(grepl("intercept", pred.vars, ignore.case=T))) {
+                pred.vars <- c("intercept", pred.vars)
                 coefs <- c(0,coefs)
             }
             intercept <- coefs[1]
-            cpgs <- cpgs[-1]
+            pred.vars <- pred.vars[-1]
             coefs <- coefs[-1]
         }
         else {
-            cpgs <- coefs$cpg
+            pred.vars <- coefs$pred.var
             coefs$cpg <- NULL
             intercept <- 0
         }
         meffonym.add.model(
             models$name[i],
-            cpgs,
+            pred.vars,
             coefs,
             intercept=intercept,
             description=paste(paste(colnames(models), models[i,], sep=":"), collapse=","))
