@@ -10,7 +10,7 @@ models <- list(cpc=x[,c("CpGs","Coefficient_CPC")],
                rrpc=x[,c("CpGs","Coefficient_refined_RPC")])
 
 for (id in names(models)) {
-    colnames(models[[id]]) <- c("cpg","coef")
+    colnames(models[[id]]) <- c("pred.var","coef")
     models[[id]] <- models[[id]][which(abs(models[[id]]$coef) > 0),]
 }
 

@@ -3,7 +3,7 @@
 
 coefs <- read.csv("datcoefInteresting94.csv")
 coefs <- coefs[,c("ID","Coef")]
-colnames(coefs) <- c("cpg","coef")
+colnames(coefs) <- c("pred.var","coef")
 write.csv(coefs, file="coefs.csv", row.names=F)
 
 
