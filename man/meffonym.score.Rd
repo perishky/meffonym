@@ -14,7 +14,8 @@ meffonym.score(
 )
 }
 \arguments{
-\item{x}{DNA methylation matrix (rows=CpG sites, columns=samples).
+\item{x}{A matrix of all score input variables, such as DNA methylation values 
+(rows=Input variables like CpG sites, columns=samples).
 Missing values in \code{x} will be replaced with the mean value of the row.}
 
 \item{model}{Model name from available list
@@ -35,9 +36,9 @@ the "horvath", "skin" and "pedbe" models, otherwise \code{NULL}.}
 Default is \code{TRUE} for 'zhang' and 'zhang.blup',  otherwise \code{FALSE}.}
 }
 \value{
-List containing the list of CpG sites actually used
+List containing the list of score variables (e.g. CpG sites) actually used
 (\code{sites}) in case
-some CpG sites included in the model are missing from \code{x},
+some score variables included in the model are missing from \code{x},
 the resulting score (\code{score}) for each sample in the dataset.
 If \code{adjust} is not \code{NULL}, then the score prior to adjustment
 will also be included in the return list (\code{raw}).
