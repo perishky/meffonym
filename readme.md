@@ -29,4 +29,4 @@ cor(ret$score, age)
 
 ## For developers
 
-Models can be added temporarily to the package using `meffonym.add.models()`.  However, these models will disappear as soon as R is exited or `meffonym` is reloaded.  To add a model so that it persists, create a new folder and add the model definition to [inst](inst) and add a new row for the model in [inst/models.csv](inst/models.csv).  The model definition is encoded in a csv file with two columns, `cpg` and `coef`.  One row can optionally provide a model intercept with the `cpg` name 'intercept'. 
+Models can be added temporarily to the package using `meffonym.add.models()`.  However, these models will disappear as soon as R is exited or `meffonym` is reloaded.  To add a model so that it persists, create a new folder and add the model definition to [inst](inst) and add a new row for the model in [inst/models.csv](inst/models.csv).  The model definition is encoded in a csv file with two columns, `pred.var` and `coef`.  One row can optionally provide a model intercept with the `pred.var` name 'intercept'. 

@@ -1,6 +1,7 @@
 #' Calculate DNA methylation scores
 #'
-#' @param x DNA methylation matrix (rows=CpG sites, columns=samples).
+#' @param x A matrix of all score input variables, such as DNA methylation values 
+#' (rows=Input variables like CpG sites, columns=samples).
 #' Missing values in \code{x} will be replaced with the mean value of the row.
 #' @param model Model name from available list
 #' (\code{\link{meffonym.models}()}).
@@ -14,9 +15,9 @@
 #' the "horvath", "skin" and "pedbe" models, otherwise \code{NULL}.
 #' @param adjust Data frame with variables for adjusting the final score.
 #' Default is \code{TRUE} for 'zhang' and 'zhang.blup',  otherwise \code{FALSE}.
-#' @return List containing the list of CpG sites actually used
+#' @return List containing the list of score variables (e.g. CpG sites) actually used
 #' (\code{sites}) in case
-#' some CpG sites included in the model are missing from \code{x},
+#' some score variables included in the model are missing from \code{x},
 #' the resulting score (\code{score}) for each sample in the dataset.
 #' If \code{adjust} is not \code{NULL}, then the score prior to adjustment
 #' will also be included in the return list (\code{raw}).
@@ -51,7 +52,8 @@ meffonym.score <- function(
     ## retrieve CpG sites available for model
     sites <- intersect(rownames(x), ret$vars)
     if (length(sites) == 0) 
-        stop("x does not contain data for CpG sites in the model")
+        stop("x does not contain data for score input variables
+         in the model")
 
     if (calibrate)
         ## calibrate the methylation data by Horvath standard
@@ -65,7 +67,8 @@ meffonym.score <- function(
         x <- impute.mean(x,1,na.rm=T)
         sites <- rownames(x)
         if (length(sites) < 1)
-            stop("x does not contain data for CpG sites in the model")
+            stop("x does not contain data for score input variables
+             in the model")
     }
 
     num.missing <- length(setdiff(names(ret$coefs), sites))
@@ -73,7 +76,7 @@ meffonym.score <- function(
         ## let user know how many sites being used for the model
         warning(paste("Dataset missing",
                       num.missing,
-                      "CpG sites for model", model))    
+                      "score input variables for model", model))    
 
     if (scale) {
         cols <- colnames(x)
