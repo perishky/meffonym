@@ -1,7 +1,17 @@
 #' List names of available models
 #'
 #' @export
-meffonym.models <- function() ls(models.global)
+meffonym.models <- function(full=F) {
+    if (!full) {
+        ls(models.global)
+    } else {
+        filename <- system.file("models.csv", package=packageName())
+        if (!file.exists(filename))
+            stop("The list of models doesn't exist, something really bad has happened!")    
+        path <- dirname(filename)
+        read.csv(filename, stringsAsFactors=F)    
+    }
+}
 
 #' Add or update set of available models
 #'
