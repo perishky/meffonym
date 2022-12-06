@@ -15,6 +15,8 @@ scores$target <- str_replace(scores$target, " ", "_")
 
 # write file for each protein target
 score.list <- split(scores, scores$target)
+score.list <- sapply(score.list, 
+			function(i) i[,-which(colnames(i)=="target")], simplify=F)
 
 sapply(names(score.list), function(i){
 	write.csv(score.list[[i]], 
