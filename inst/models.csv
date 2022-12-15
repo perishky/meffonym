@@ -21,6 +21,8 @@ zhang.blup,blood,age,10.1186/s13073-019-0667-1,https://github.com/qzhang314/DNAm
 miage,blood,stem cell divisions,10.1080/15592294.2017.1389361,http://www.columbia.edu/~sw2206/softwares/mitotic_age_R_code.zip,miage/coefs.csv
 richard-huang-sbp,blood,systolic blood pressure,10.1016/j.ajhg.2017.09.028,NA,richard-huang-sbp/richard-huang-sbp.withcovars.csv
 richard-huang-dbp,blood,diastolic blood pressure,10.1161/HYPERTENSIONAHA.120.14973,NA,richard-huang-dbp/richard-huang-dbp.withcovars.csv
+richard-sbp,blood,systolic blood pressure,10.1016/j.ajhg.2017.09.028,NA,richard-sbp/richard-sbp.csv
+richard-dbp,blood,diastolic blood pressure,10.1016/j.ajhg.2017.09.028,NA,richard-dbp/richard-dbp.csv
 ADAMTS,blood,ADAMTS,10.7554/ELIFE.71802,https://zenodo.org/record/5869576/files/Predictors_Shiny_by_Groups.csv,episcores/ADAMTS.csv
 Adiponectin,blood,Adiponectin,10.7554/ELIFE.71802,https://zenodo.org/record/5869576/files/Predictors_Shiny_by_Groups.csv,episcores/Adiponectin.csv
 Afamin,blood,Afamin,10.7554/ELIFE.71802,https://zenodo.org/record/5869576/files/Predictors_Shiny_by_Groups.csv,episcores/Afamin.csv
