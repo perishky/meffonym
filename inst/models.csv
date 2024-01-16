@@ -6,6 +6,7 @@ bohlin.min,cord,gestational age,10.1186/s13059-016-1063-4,http://dx.doi.org/10.5
 bohlin.1se,cord,gestational age,10.1186/s13059-016-1063-4,http://dx.doi.org/10.5281/zenodo.60498,bohlin/model-1se.csv
 epitoc,blood,stem cell divisions,10.1186/s13059-016-1064-3,https://static-content.springer.com/esm/art%3A10.1186%2Fs13059-016-1064-3/MediaObjects/13059_2016_1064_MOESM2_ESM.xls,epitoc/coefs.csv
 dunedinpoam38,blood,pace of aging,10.7554/eLife.54870,https://github.com/danbelsky/DunedinPoAm38,dunedinpoam38/coefs.csv
+dunedinpace,blood,pace of aging,10.7554/eLife.73420,https://github.com/danbelsky/DunedinPACE,dunedinpace/coefs.csv
 brenner,blood,mortality,10.1038/ncomms14617,Supplementary Figure 1,brenner/coefs.csv
 epitoc2,blood,stem cell divisions,10.1186/s13073-020-00752-3,https://zenodo.org/record/2632938/files/dataETOC2.Rd?download=1,epitoc2/coefs.csv
 lee.cpc,placenta,gestational age,10.18632/aging.102049,https://www.aging-us.com/article/102049/supplementary/SD2/0/aging-v11i12-102049-supplementary-material-SD2.csv,lee/coefs-cpc.csv

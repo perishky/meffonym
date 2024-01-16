@@ -21,8 +21,13 @@ Missing values in \code{x} will be replaced with the mean value of the row.}
 \item{model}{Model name from available list
 (\code{\link{meffonym.models}()}).}
 
-\item{calibrate}{Prior to calculating scores, calibrate DNA methylation
-using BMIQ as in Horvath's DNAm age calculator (Default: FALSE).}
+\item{calibrate}{Prior to calculating scores, if TRUE then
+calibrate DNA methylation, otherwise use DNA methylation unmodified
+(Default: FALSE).
+If `model=="dunedinpace"`, then calibration involves quantile
+normalization to the DunedinPACE gold standard;
+otherwise, calibration involves applying the BMIQ algorithm
+to the Horvath gold standard as in Horvath's DNAm age calculator.}
 
 \item{scale}{Prior to calculating scores, standardize methylation levels,
 i.e. subtract mean and divide by standard deviation for each CpG site

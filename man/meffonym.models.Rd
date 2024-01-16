@@ -4,7 +4,7 @@
 \alias{meffonym.models}
 \title{List names of available models}
 \usage{
-meffonym.models()
+meffonym.models(full = F)
 }
 \description{
 List names of available models

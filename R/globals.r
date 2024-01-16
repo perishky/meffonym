@@ -8,5 +8,9 @@
     cat("load horvath standard ...\n")
     standard <- load.horvath.standard(pkgname)
     assign("horvath.standard", standard, envir=env)
+
+    cat("load DunedinPACE standard ...\n")
+    standard <- load.dunedinpace.standard(pkgname)
+    assign("dunedinpace.standard",standard, envir=env)
 }
 
