@@ -4,6 +4,9 @@ horvath,multi,age,10.1186/10.1186/gb-2013-14-10-r115,https://horvath.genetics.uc
 hannum,blood,age,10.1016/j.molcel.2012.10.016,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3780611/bin/NIHMS418935-supplement-02.xlsx,hannum/coefs.csv
 bohlin.min,cord,gestational age,10.1186/s13059-016-1063-4,http://dx.doi.org/10.5281/zenodo.60498,bohlin/model-min.csv
 bohlin.1se,cord,gestational age,10.1186/s13059-016-1063-4,http://dx.doi.org/10.5281/zenodo.60498,bohlin/model-1se.csv
+haftorn.epic,cord,gestational age,10.1186/s13148-021-01055-z,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8056641/bin/13148_2021_1055_MOESM4_ESM.xlsx,haftorn/epic.csv
+haftorn.450k,cord,gestational age,10.1186/s13148-021-01055-z,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8056641/bin/13148_2021_1055_MOESM4_ESM.xlsx,haftorn/450k.csv
+haftorn.etd,cord,gestational age,10.1186/s13148-021-01055-z,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8056641/bin/13148_2021_1055_MOESM4_ESM.xlsx,haftorn/etd.csv
 epitoc,blood,stem cell divisions,10.1186/s13059-016-1064-3,https://static-content.springer.com/esm/art%3A10.1186%2Fs13059-016-1064-3/MediaObjects/13059_2016_1064_MOESM2_ESM.xls,epitoc/coefs.csv
 dunedinpoam38,blood,pace of aging,10.7554/eLife.54870,https://github.com/danbelsky/DunedinPoAm38,dunedinpoam38/coefs.csv
 dunedinpace,blood,pace of aging,10.7554/eLife.73420,https://github.com/danbelsky/DunedinPACE,dunedinpace/coefs.csv
