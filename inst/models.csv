@@ -137,3 +137,7 @@ Tryptase_beta-2,blood,Tryptase_beta-2,10.7554/ELIFE.71802,https://zenodo.org/rec
 VCAM1,blood,VCAM1,10.7554/ELIFE.71802,https://zenodo.org/record/5869576/files/Predictors_Shiny_by_Groups.csv,episcores/VCAM1.csv
 VEGFA,blood,VEGFA,10.7554/ELIFE.71802,https://zenodo.org/record/5869576/files/Predictors_Shiny_by_Groups.csv,episcores/VEGFA.csv
 WFIKKN2,blood,WFIKKN2,10.7554/ELIFE.71802,https://zenodo.org/record/5869576/files/Predictors_Shiny_by_Groups.csv,episcores/WFIKKN2.csv
+langdon-agnostic-current-vs-former,blood,smoking,10.1186/s13148-021-01191-6,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8597260/bin/13148_2021_1191_MOESM1_ESM.xlsx,"langdon-smoking/current-vs-former-agnostic-coefs.csv"
+langdon-candidate-current-vs-former,blood,smoking,10.1186/s13148-021-01191-6,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8597260/bin/13148_2021_1191_MOESM1_ESM.xlsx,"langdon-smoking/current-vs-former-candidate-coefs.csv"
+langdon-agnostic-ever-vs-never,blood,smoking,10.1186/s13148-021-01191-6,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8597260/bin/13148_2021_1191_MOESM1_ESM.xlsx,"langdon-smoking/ever-vs-never-agnostic-coefs.csv"
+langdon-candidate-ever-vs-never,blood,smoking,10.1186/s13148-021-01191-6,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8597260/bin/13148_2021_1191_MOESM1_ESM.xlsx,"langdon-smoking/ever-vs-never-candidate-coefs.csv"
