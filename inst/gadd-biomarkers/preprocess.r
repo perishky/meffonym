@@ -1,8 +1,6 @@
 ## Gadd episcores for GDF15 and nt-probnp 
 #https://static-content.springer.com/esm/art%3A10.1038%2Fs43587-023-00391-4/MediaObjects/43587_2023_391_MOESM3_ESM.xlsx
-
 library(readxl)
-
 url <-"https://www.medrxiv.org/content/medrxiv/early/2023/10/19/2023.10.18.23297200/DC3/embed/media-3.xlsx"
 download.file(url, destfile=basename(url))
 if (!file.exists(basename(url))) download.file(url, destfile=basename(url))
@@ -31,9 +29,6 @@ models <- data.frame(name = names(score.list),
 					target = unique(scores$target),
 					publication = "10.1101/2023.10.18.23297200",
 					source = "https://www.medrxiv.org/content/medrxiv/early/2023/10/19/2023.10.18.23297200/DC3/embed/media-3.xlsx",
-					filename = file.path("episcores", paste0(names(score.list), ".csv")))
+					filename = file.path("gadd-biomarkers", paste0(names(score.list), ".csv")))
 
-write.csv(models, "episcores-models.csv", row.names=F, quote = F)
-
-
-write.csv(scores.raw, file="coefs.csv", row.names=F)
+write.csv(models, "gadd-biomarkers-models.csv", row.names=F, quote = F)
