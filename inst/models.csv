@@ -144,3 +144,4 @@ langdon-candidate-ever-vs-never,blood,smoking,10.1186/s13148-021-01191-6,https:/
 cheng-diabetes,blood,diabetes,10.1038/s43587-023-00391-4,https://static-content.springer.com/esm/art%3A10.1038%2Fs43587-023-00391-4/MediaObjects/43587_2023_391_MOESM3_ESM.xlsx,cheng-diabetes/coefs.csv
 gdf15,blood,GDF15,10.1101/2023.10.18.23297200,https://www.medrxiv.org/content/medrxiv/early/2023/10/19/2023.10.18.23297200/DC3/embed/media-3.xlsx,gadd-biomarkers/gdf15.csv
 nt-probnp,blood,NT-proBNP,10.1101/2023.10.18.23297200,https://www.medrxiv.org/content/medrxiv/early/2023/10/19/2023.10.18.23297200/DC3/embed/media-3.xlsx,gadd-biomarkers/nt-probnp.csv
+mcigarette,blood,smoking,10.1101/2024.05.21.24307663,https://www.medrxiv.org/content/medrxiv/early/2024/05/21/2024.05.21.24307663/DC1/embed/media-1.xlsx,mcigarette/coefs.csv
