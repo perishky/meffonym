@@ -145,3 +145,4 @@ cheng-diabetes,blood,diabetes,10.1038/s43587-023-00391-4,https://static-content.
 gdf15,blood,GDF15,10.1101/2023.10.18.23297200,https://www.medrxiv.org/content/medrxiv/early/2023/10/19/2023.10.18.23297200/DC3/embed/media-3.xlsx,gadd-biomarkers/gdf15.csv
 nt-probnp,blood,NT-proBNP,10.1101/2023.10.18.23297200,https://www.medrxiv.org/content/medrxiv/early/2023/10/19/2023.10.18.23297200/DC3/embed/media-3.xlsx,gadd-biomarkers/nt-probnp.csv
 mcigarette,blood,smoking,10.1101/2024.05.21.24307663,https://www.medrxiv.org/content/medrxiv/early/2024/05/21/2024.05.21.24307663/DC1/embed/media-1.xlsx,mcigarette/coefs.csv
+il6,blood,IL6,0.1093/gerona/glab046,https://academic.oup.com/biomedgerontology/article/76/12/2284/6141415?login=true#supplementary-data,il6/stevenson-sites.csv
