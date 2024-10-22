@@ -1,0 +1,3 @@
+name,tissue,target,publication,source,filename
+gdf15,blood,GDF15,10.1101/2023.10.18.23297200,https://www.medrxiv.org/content/medrxiv/early/2023/10/19/2023.10.18.23297200/DC3/embed/media-3.xlsx,gadd-biomarkers/gdf15.csv
+nt-probnp,blood,NT-proBNP,10.1101/2023.10.18.23297200,https://www.medrxiv.org/content/medrxiv/early/2023/10/19/2023.10.18.23297200/DC3/embed/media-3.xlsx,gadd-biomarkers/nt-probnp.csv
