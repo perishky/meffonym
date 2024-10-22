@@ -60,13 +60,20 @@ meffonym.score <- function(
         stop("x does not contain data for score input variables
          in the model")
 
-    if (calibrate)
+    if (calibrate) {
+        x.orig <- x
         if (model == "dunedinpace") {
-            x <- meffonym.quantile.normalization(x, meffonym.dunedinpace.standard())
+            std <- meffonym.dunedinpace.standard()
+            x <- meffonym.quantile.normalization(x,std)
         } else {
             ## calibrate the methylation data by Horvath standard
-            x <- meffonym.bmiq.calibration(x, meffonym.horvath.standard())
+            std <- meffonym.horvath.standard()
+            x <- meffonym.bmiq.calibration(x, std)
         }
+        skipped.vars <- setdiff(rownames(x.orig), rownames(x))
+        if (length(skipped.vars) > 0) 
+            x <- rbind(x, x.orig[skipped.vars,,drop=F])
+    }
 
     ## restrict methylation data to CpG sites in model
     x <- x[sites,,drop=F]

@@ -1,23 +1,25 @@
 printFlush <- print
 library(impute)
 
-url <- "https://horvath.genetics.ucla.edu/html/dnamage"
-
-probeAnnotation21kdatMethUsed <- read.csv(file.path(url,"probeAnnotation21kdatMethUsed.csv"))
+probeAnnotation21kdatMethUsed <- read.csv(file.path("dnamage","probeAnnotation21kdatMethUsed.csv"))
                                           
-probeAnnotation27k <- read.csv(file.path(url,"datMiniAnnotation27k.csv"))
+probeAnnotation27k <- read.csv(file.path("dnamage","datMiniAnnotation27k.csv"))
 
-datClock <- read.csv(file.path(url,"AdditionalFile3.csv"))
+datClock <- read.csv(file.path("dnamage","AdditionalFile3.csv"))
 
-source(file.path(url, "NORMALIZATION.R"))
+source(file.path("dnamage", "NORMALIZATION.R"))
 
+missing.sites <- setdiff(probeAnnotation21kdatMethUsed$Name, dat1$ProbeID)
+if (length(missing.sites) > 0) {
+    vals <- with(probeAnnotation21kdatMethUsed, {
+        goldstandard2[match(missing.sites, Name)]
+    })
+    missing.data <- matrix(vals,nrow=length(vals),ncol=ncol(dat1)-1)
+    missing.data <- data.frame(ProbeID=missing.sites, missing.data)
+    colnames(missing.data) <- colnames(dat1)
+    dat1 <- rbind(dat1, missing.data)
+}
 
-dnam.url <- file.path(url, "dat0BloodIllumina450K.zip")
-filename <- basename(dnam.url)
-download.file(dnam.url, destfile=filename)
-dat1 <- read.csv(unz(filename, sub("zip","csv",filename)))
-colnames(dat1)[1] <- "ProbeID"
-#dat1 <- read.csv(file.path(url, "MethylationDataExample55.csv"))
 
 nSamples <- ncol(dat1)-1
 normalizeData <- TRUE
@@ -43,7 +45,7 @@ dat1 <- dat1[match(probeAnnotation21kdatMethUsed$Name,
                    dat1$ProbeID),]
 
 set.seed(1)
-source(file.path(url, "StepwiseAnalysis.txt"))
+source(file.path("dnamage", "StepwiseAnalysis.txt"))
 
 horvath.example <- datout
 
@@ -80,5 +82,4 @@ rm(anti.trafo,
    selectCpGsClock,
    selectXchromosome,
    trafo,
-   url,
    XchromosomalCpGs)

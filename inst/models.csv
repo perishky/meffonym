@@ -1,4 +1,24 @@
 name,tissue,target,publication,source,filename
+grimage,blood,time until death,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-coefs.csv
+grimage-DNAmADM,blood,DNAmADM,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-DNAmADM-coefs.csv
+grimage-DNAmB2M,blood,DNAmB2M,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-DNAmB2M-coefs.csv
+grimage-DNAmCystatinC,blood,DNAmCystatinC,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-DNAmCystatinC-coefs.csv
+grimage-DNAmGDF15,blood,DNAmGDF15,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-DNAmGDF15-coefs.csv
+grimage-DNAmLeptin,blood,DNAmLeptin,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-DNAmLeptin-coefs.csv
+grimage-DNAmPACKYRS,blood,DNAmPACKYRS,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-DNAmPACKYRS-coefs.csv
+grimage-DNAmPAI1,blood,DNAmPAI1,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-DNAmPAI1-coefs.csv
+grimage-DNAmTIMP1,blood,DNAmTIMP1,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-DNAmTIMP1-coefs.csv
+grimagev2,blood,time until death,10.18632/aging.204434,https://github.com/bio-learn/biolearn,grimage/grimagev2-coefsv2.csv
+grimagev2-DNAmADM,blood,DNAmADM,10.18632/aging.204434,https://github.com/bio-learn/biolearn,grimage/grimagev2-DNAmADM-coefs.csv
+grimagev2-DNAmB2M,blood,DNAmB2M,10.18632/aging.204434,https://github.com/bio-learn/biolearn,grimage/grimagev2-DNAmB2M-coefs.csv
+grimagev2-DNAmCystatinC,blood,DNAmCystatinC,10.18632/aging.204434,https://github.com/bio-learn/biolearn,grimage/grimagev2-DNAmCystatinC-coefs.csv
+grimagev2-DNAmGDF15,blood,DNAmGDF15,10.18632/aging.204434,https://github.com/bio-learn/biolearn,grimage/grimagev2-DNAmGDF15-coefs.csv
+grimagev2-DNAmLeptin,blood,DNAmLeptin,10.18632/aging.204434,https://github.com/bio-learn/biolearn,grimage/grimagev2-DNAmLeptin-coefs.csv
+grimagev2-DNAmPACKYRS,blood,DNAmPACKYRS,10.18632/aging.204434,https://github.com/bio-learn/biolearn,grimage/grimagev2-DNAmPACKYRS-coefs.csv
+grimagev2-DNAmPAI1,blood,DNAmPAI1,10.18632/aging.204434,https://github.com/bio-learn/biolearn,grimage/grimagev2-DNAmPAI1-coefs.csv
+grimagev2-DNAmTIMP1,blood,DNAmTIMP1,10.18632/aging.204434,https://github.com/bio-learn/biolearn,grimage/grimagev2-DNAmTIMP1-coefs.csv
+grimagev2-DNAmlogA1C,blood,DNAmlogA1C,10.18632/aging.204434,https://github.com/bio-learn/biolearn,grimage/grimagev2-DNAmlogA1C-coefs.csv
+grimagev2-DNAmlogCRP,blood,DNAmlogCRP,10.18632/aging.204434,https://github.com/bio-learn/biolearn,grimage/grimagev2-DNAmlogCRP-coefs.csv
 knight,cord,gestational age,10.1186/s13059-016-1068-z,https://static-content.springer.com/esm/art:10.1186/s13059-016-1068-z/MediaObjects/13059_2016_1068_MOESM3_ESM.csv,knight/coefs.csv
 horvath,multi,age,10.1186/10.1186/gb-2013-14-10-r115,https://horvath.genetics.ucla.edu/html/dnamage/AdditionalFile3.csv,horvath/coefs.csv
 hannum,blood,age,10.1016/j.molcel.2012.10.016,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3780611/bin/NIHMS418935-supplement-02.xlsx,hannum/coefs.csv

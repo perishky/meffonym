@@ -1,8 +1,5 @@
 #!/bin/bash
 
-## test adding a model
-Rscript add-model.r
-
 ## verify Horvath clocks match calculator website
 Rscript horvath.r
 
