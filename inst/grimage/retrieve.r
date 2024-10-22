@@ -60,9 +60,9 @@ for (name in names(subs)) {
     models <- c(models, subs[[name]])
 }
 
-for (name in names(models)) 
+for (name in names(models))
     write.csv(
-        data.frame(pred.var=names(models[[name]]), coef=models[[name]])
+        data.frame(pred.var=names(models[[name]]), coef=models[[name]]),
         file=paste(name, "coefs.csv", sep="-"),
         row.names=F)
 
