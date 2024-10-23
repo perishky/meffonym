@@ -66,7 +66,7 @@ load.models <- function(pkgname) {
 
     for (i in 1:nrow(models)) {
         filename <- file.path(path, models$filename[i])
-        cat("loading", filename, " ...\n")
+        ##cat("loading", filename, " ...\n")
         coefs <- read.csv(filename, stringsAsFactors=F)
         if (ncol(coefs) == 2) {
             pred.vars <- coefs$pred.var
