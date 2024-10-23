@@ -2,7 +2,7 @@
 
 ## Installation 
 ```
-library(devtools)
+library(remotes)
 install_github("perishky/meffonym")
 ```
 
@@ -23,10 +23,45 @@ cor(ret$score, age)
 ## [1] 0.9342
 ```
 
+## Special cases
+
+Some models require additional inputs or have optional steps:
+
+* The original epigenetic clock, **Horvath DNAmAge** ('horvath' model)
+  includes an optional normalization step using the BMIQ algorithm and a
+  DNA methylation 'gold standard'
+  (http://labs.genetics.ucla.edu/horvath/dnamage/probeAnnotation21kdatMethUsed.csv).
+  This can be achieved here by setting the `calibrate` parameter to `TRUE`
+  in `meffonym.score()` or by using the `meffonym.horvath.age()` function. 
+
+* Similarly, **DunedinPACE** ('dunedinpace' model) allows a similar optional normalization
+  step using a standard (from https://github.com/danbelsky/DunedinPACE).
+  This can be achieved here by setting the `calibrate` parameter to `TRUE`
+  in `meffonym.score()` or by using the `meffonym.dunedinpace.estimate()` function.
+
+* The **Grimage** model ('grimage' and 'grimagev2') includes sex and age in addition to DNA methylation.
+  These can be specified either by adding additional rows
+  called 'female' (1 if female and 0 of male) and 'age' to the data matrix passed to `meffonym.score()`.
+  Alternatively, the `meffonym.grimage()` function can be used.
+
+* A few clocks apply a log-transformation to linear model estimates.
+  This is default behavior by `meffonym.score()` for
+  the **Horvath DNAmAge** ('horvath'), **Skin and Blood** ('skin') and **PedBE** ('pedbe') models.
+  This behavior can be changed for all clocks by passing an alterative transformation
+  function to the `transform` parameter. 
+
 ## Current list of models
 
 [models.csv](inst/models.csv)
 
 ## For developers
 
-Models can be added temporarily to the package using `meffonym.add.models()`.  However, these models will disappear as soon as R is exited or `meffonym` is reloaded.  To add a model so that it persists, create a new folder and add the model definition to [inst](inst) and add a new row for the model in [inst/models.csv](inst/models.csv).  The model definition is encoded in a csv file with two columns, `pred.var` and `coef`.  One row can optionally provide a model intercept with the `pred.var` name 'intercept'. 
+Models can be added temporarily to the package using
+`meffonym.add.models()`.  However, these models will disappear as soon
+as R is exited or `meffonym` is reloaded.  To add a model so that it
+persists, create a new folder and add the model definition to
+[inst](inst) and add a new row for the model in
+[inst/models.csv](inst/models.csv).  The model definition is encoded
+in a csv file with two columns, `pred.var` and `coef`.  One row can
+optionally provide a model intercept with the `pred.var` name
+'intercept'.

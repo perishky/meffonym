@@ -1,7 +1,6 @@
-library(devtools)
 library(roxygen2)
 
 setwd("..")
-document("meffonym")
+roxygenise("meffonym")
 
 system("R CMD INSTALL meffonym")

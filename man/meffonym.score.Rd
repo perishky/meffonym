@@ -30,15 +30,14 @@ otherwise, calibration involves applying the BMIQ algorithm
 to the Horvath gold standard as in Horvath's DNAm age calculator.}
 
 \item{scale}{Prior to calculating scores, standardize methylation levels,
-i.e. subtract mean and divide by standard deviation for each CpG site
-(Default: FALSE).}
+i.e. subtract mean and divide by standard deviation for each CpG site.
+Default is \code{TRUE} for 'zhang' and 'zhang.blup',  otherwise \code{FALSE}.}
 
 \item{transform}{After calculating scores, transform scores
 using this function. Default is \code{\link{anti.trafo}} for
 the "horvath", "skin" and "pedbe" models, otherwise \code{NULL}.}
 
-\item{adjust}{Data frame with variables for adjusting the final score.
-Default is \code{TRUE} for 'zhang' and 'zhang.blup',  otherwise \code{FALSE}.}
+\item{adjust}{Data frame with variables for adjusting the final score (Default: \code{NULL}).}
 }
 \value{
 List containing the list of score variables (e.g. CpG sites) actually used
