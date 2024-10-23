@@ -1,5 +1,5 @@
 ## https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE145254
-library(geograbi)
+library(geograbi) #https://github.com/yousefi138/geograbi
 
 samples = geograbi.get.samples("GSE145254")
 samples = cbind(samples, geograbi.extract.characteristics(samples, "characteristics_ch"))

@@ -1,16 +1,17 @@
 ## Compare age estimates against Horvath's age calculator
 
 ## save methylation dataset
-if (file.exists("GSE145254-meth.csv"))
+if (!file.exists("GSE145254-meth.csv"))
     source("save-GSE145254.r")
 
-library(datatable)
+library(data.table)
 data <- list(
     dnam=as.matrix(fread("GSE145254-meth.csv"),rownames=1),
     samples=as.data.frame(fread("GSE145254-samples.csv")))
 
+## calculate DNAm age using code from the original publication (Horvath, Genome Biology, 2013)
 dat1 <- data.frame(ProbeID=rownames(data$dnam),data$dnam)
-source("horvath-example.r")
+source("horvath-example.r") ## 2 minutes
 ## in: dat1
 ## out: horvath.example
 
@@ -24,6 +25,7 @@ grimage,DNAmGrimAgeBasedOnRealAge,DNAmGrimAgeBasedOnRealAgeAdjAge
 grimagev2,DNAmGrimAge2BasedOnRealAge,
 dnamtl,DNAmTL,DNAmTLAdjAge", stringsAsFactors=F)
 
+## calculate clocks using Horvath's calculator website
 ## https://dnamage.clockfoundation.org/
 website <- read.csv("GSE145254-dnamage-calculator.csv")
 
