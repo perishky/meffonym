@@ -65,3 +65,7 @@ persists, create a new folder and add the model definition to
 in a csv file with two columns, `pred.var` and `coef`.  One row can
 optionally provide a model intercept with the `pred.var` name
 'intercept'.
+
+## Models to add
+* Shokhirev MN, Torosin NS, Kramer DJ, Johnson AA, Cuellar TL. CheekAge: a next-generation buccal epigenetic aging clock associated with lifestyle and health. Geroscience. 2024 Jun;46(3):3429-3443.
+* Smith HM, Ng HK, Moodie JE, Gadd DA, McCartney DL, Bernabeu E, Campbell A, Redmond P, Taylor A, Page D, Corley J, Harris SE, Tay D, Deary IJ, Evans KL, Robinson MR, Chambers JC, Loh M, Cox SR, Marioni RE, Hillary RF. Methylome-wide studies of six metabolic traits. medRxiv [Preprint]. 2024 May 29:2024.05.29.24308103. doi: 10.1101/2024.05.29.24308103.
