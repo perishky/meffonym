@@ -16,6 +16,7 @@ library(meffonym)
 
 meth <- ... ## methylation matrix, rows=CpG site, columns=samples
 age <- ... ## age for each sample
+female <- ... ## sex for each sample (1=female,0=male)
 
 ret <- meffonym.score(meth, "hannum")
 
@@ -32,23 +33,39 @@ Some models require additional inputs or have optional steps:
   DNA methylation 'gold standard'
   (http://labs.genetics.ucla.edu/horvath/dnamage/probeAnnotation21kdatMethUsed.csv).
   This can be achieved here by setting the `calibrate` parameter to `TRUE`
-  in `meffonym.score()` or by using the `meffonym.horvath.age()` function. 
+  in `meffonym.score()` or by using the `meffonym.horvath.age()` function.
+
+```
+meffonym.score(meth,"horvath",calibrate=TRUE)$score
+== meffonym.horvath.age(meth)
+```
 
 * Similarly, **DunedinPACE** ('dunedinpace' model) allows a similar optional normalization
   step using a standard (from https://github.com/danbelsky/DunedinPACE).
   This can be achieved here by setting the `calibrate` parameter to `TRUE`
   in `meffonym.score()` or by using the `meffonym.dunedinpace.estimate()` function.
 
+```
+meffonym.score(meth, "dunedinpace", calibrate=TRUE)$score
+== meffonym.dunedinpace.estimate(meth)
+```
+
 * The **Grimage** model ('grimage' and 'grimagev2') includes sex and age in addition to DNA methylation.
   These can be specified either by adding additional rows
   called 'female' (1 if female and 0 of male) and 'age' to the data matrix passed to `meffonym.score()`.
   Alternatively, the `meffonym.grimage()` function can be used.
 
+```
+meffonym.score(rbind(meth,female=female,age=age))$score
+== meffonym.grimage(meth,female,age)
+```
+
 * A few clocks apply a log-transformation to linear model estimates.
   This is default behavior by `meffonym.score()` for
   the **Horvath DNAmAge** ('horvath'), **Skin and Blood** ('skin') and **PedBE** ('pedbe') models.
   This behavior can be changed for all clocks by passing an alterative transformation
-  function to the `transform` parameter. 
+  function to the `transform` parameter.
+
 
 ## Current list of models
 
