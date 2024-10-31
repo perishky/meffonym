@@ -23,6 +23,7 @@ meffonym.models <- function(full=F) {
 #'
 #' @export
 meffonym.add.model <- function(name, variables, coefficients, description, intercept=0) {
+    cat(date(), "Adding model: ", name, "\n")
     model <- create.model(variables, coefficients, intercept=intercept, description=description)
     assign(name, model, envir=models.global)
     invisible(TRUE)
