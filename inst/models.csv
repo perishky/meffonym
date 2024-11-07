@@ -2,7 +2,7 @@ name,tissue,target,publication,source,filename
 do.bmi,blood,BMI,10.1016/j.ajhg.2022.12.014,https://ars.els-cdn.com/content/image/1-s2.0-S0002929722005481-mmc2.xlsx,bmi/bmi-model.csv
 dnamalci,blood,alcohol intake,10.1101/591404,https://github.com/yousefi138/dnamalci,alcohol/dnamalci-sites.csv
 mccartney.hdl,blood,HDL cholesterol,10.1186/s13059-018-1514-1,https://ars.els-cdn.com/content/image/1-s2.0-S0002929722005481-mmc2.xlsx,hdl/mccartney_supplement_s6.csv
-mccartney.alcohol,blood,alcohol intake,https://doi.org/10.1186/s13059-018-1514-1,alcohol/mccartney_supplement_s3.csv
+mccartney.alcohol,blood,alcohol intake,10.1186/s13059-018-1514-1,https://ars.els-cdn.com/content/image/1-s2.0-S0002929722005481-mmc2.xlsx,alcohol/mccartney_supplement_s3.csv
 grimage,blood,time until death,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-coefs.csv
 grimage-DNAmADM,blood,DNAmADM,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-DNAmADM-coefs.csv
 grimage-DNAmB2M,blood,DNAmB2M,10.18632/aging.101684,https://github.com/bio-learn/biolearn,grimage/grimage-DNAmB2M-coefs.csv
