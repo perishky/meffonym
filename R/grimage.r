@@ -13,3 +13,6 @@ meffonym.grimage <- function(x,female,age,version=1,calibrate=F) {
         modelname,
         calibrate=calibrate)$score
 }
+
+
+

@@ -1,4 +1,10 @@
 name,tissue,target,publication,source,filename
+cmv,blood,CMV,10.1038/s41467-022-33511-6,https://github.com/JacobBergstedt/CMVest/raw/refs/heads/main/model_coefficients.tsv,cmv/coefs.csv
+epismoker-current,blood,smoking,10.2217/epi-2019-0206,https://github.com/sailalithabollepalli/EpiSmokEr/raw/refs/heads/master/data/MLM_coefficients.RData,epismoker/current-coefs.csv
+epismoker-former,blood,smoking,10.2217/epi-2019-0206,https://github.com/sailalithabollepalli/EpiSmokEr/raw/refs/heads/master/data/MLM_coefficients.RData,epismoker/former-coefs.csv
+epismoker-never,blood,smoking,10.2217/epi-2019-0206,https://github.com/sailalithabollepalli/EpiSmokEr/raw/refs/heads/master/data/MLM_coefficients.RData,epismoker/never-coefs.csv
+elliott-smoking,blood,smoking,10.1186/1868-7083-6-4,https://github.com/MRCIEU/godmc/raw/refs/heads/master/resources/smoking/illig.RData,elliott/coefs.csv
+zhang-smoking,blood,smoking,10.1016/j.envres.2016.01.026,https://doi.org/10.1016/j.envres.2016.01.026,zhang-smoking/coefs.csv
 do.bmi,blood,BMI,10.1016/j.ajhg.2022.12.014,https://ars.els-cdn.com/content/image/1-s2.0-S0002929722005481-mmc2.xlsx,bmi/bmi-model.csv
 dnamalci,blood,alcohol intake,10.1101/591404,https://github.com/yousefi138/dnamalci,alcohol/dnamalci-sites.csv
 mccartney.hdl,blood,HDL cholesterol,10.1186/s13059-018-1514-1,https://ars.els-cdn.com/content/image/1-s2.0-S0002929722005481-mmc2.xlsx,hdl/mccartney_supplement_s6.csv
