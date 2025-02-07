@@ -1,4 +1,6 @@
 name,tissue,target,publication,source,filename
+patella-lead,blood,patella lead concentration,10.1038/s41370-019-0183-9,table s3,nas-lead/patella.csv
+tibia-lead,blood,tibia lead concentration,10.1038/s41370-019-0183-9,table s4,nas-lead/tibia.csv
 cmv,blood,CMV,10.1038/s41467-022-33511-6,https://github.com/JacobBergstedt/CMVest/raw/refs/heads/main/model_coefficients.tsv,cmv/coefs.csv
 epismoker-current,blood,smoking,10.2217/epi-2019-0206,https://github.com/sailalithabollepalli/EpiSmokEr/raw/refs/heads/master/data/MLM_coefficients.RData,epismoker/current-coefs.csv
 epismoker-former,blood,smoking,10.2217/epi-2019-0206,https://github.com/sailalithabollepalli/EpiSmokEr/raw/refs/heads/master/data/MLM_coefficients.RData,epismoker/former-coefs.csv
