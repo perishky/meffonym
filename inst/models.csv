@@ -1,4 +1,7 @@
 name,tissue,target,publication,source,filename
+wahl-bmi-european,blood,BMI,10.1038/nature20784,https://pmc.ncbi.nlm.nih.gov/articles/instance/5570525/bin/NIHMS70428-supplement-Supplementary_Tables.xlsx,wahl-bmi/european.csv
+wahl-bmi-indian,blood,BMI,10.1038/nature20784,https://pmc.ncbi.nlm.nih.gov/articles/instance/5570525/bin/NIHMS70428-supplement-Supplementary_Tables.xlsx,wahl-bmi/indian.csv
+wahl-bmi,blood,BMI,10.1038/nature20784,https://pmc.ncbi.nlm.nih.gov/articles/instance/5570525/bin/NIHMS70428-supplement-Supplementary_Tables.xlsx,wahl-bmi/combined.csv
 gs-cognitive,blood,cognitive ability,10.1186/s13059-021-02596-5,https://gitlab.com/danielmccartney/ewas_of_cognitive_function/-/raw/master/EWAS_Betas/g_processed_Mean_Beta_PIP.txt,gs-cognitive/coefs.csv
 patella-lead,blood,patella lead concentration,10.1038/s41370-019-0183-9,table s3,nas-lead/patella.csv
 tibia-lead,blood,tibia lead concentration,10.1038/s41370-019-0183-9,table s4,nas-lead/tibia.csv
