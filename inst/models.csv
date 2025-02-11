@@ -1,4 +1,5 @@
 name,tissue,target,publication,source,filename
+gs-cognitive,blood,cognitive ability,10.1186/s13059-021-02596-5,https://gitlab.com/danielmccartney/ewas_of_cognitive_function/-/raw/master/EWAS_Betas/g_processed_Mean_Beta_PIP.txt,gs-cognitive/coefs.csv
 patella-lead,blood,patella lead concentration,10.1038/s41370-019-0183-9,table s3,nas-lead/patella.csv
 tibia-lead,blood,tibia lead concentration,10.1038/s41370-019-0183-9,table s4,nas-lead/tibia.csv
 cmv,blood,CMV,10.1038/s41467-022-33511-6,https://github.com/JacobBergstedt/CMVest/raw/refs/heads/main/model_coefficients.tsv,cmv/coefs.csv
