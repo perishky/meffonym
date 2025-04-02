@@ -22,6 +22,6 @@ meffonym.accel <- function(
         stopifnot(nrow(adjust) == length(age))
         adjust <- cbind(adjust, age=age)
     }
-    meffyonym.score(x,model,adjust)$score
+    meffonym.score(x,model,adjust)$score
 }
 
