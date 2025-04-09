@@ -1,4 +1,8 @@
 name,tissue,target,publication,source,filename
+wid-smk-distal-epithelial-hyperM,blood/buccal/cervical,smoking,10.1158/0008-5472.CAN-23-2957,https://github.com/chiaraherzog/WID.smk,widsmk/WID_SMK_distal_epithelial_hyperM.csv
+wid-smk-immune-hypoM,blood/buccal/cervical,smoking,10.1158/0008-5472.CAN-23-2957,https://github.com/chiaraherzog/WID.smk,widsmk/WID_SMK_immune_hypoM.csv
+wid-smk-epithelial-hypoM,blood/buccal/cervical,smoking,10.1158/0008-5472.CAN-23-2957,https://github.com/chiaraherzog/WID.smk,widsmk/WID_SMK_epithelial_hypoM.csv
+wid-smk-proximal-epithelial-hyperM,blood/buccal/cervical,smoking,10.1158/0008-5472.CAN-23-2957,https://github.com/chiaraherzog/WID.smk,widsmk/WID_SMK_proximal_epithelial_hyperM.csv
 wahl-bmi-european,blood,BMI,10.1038/nature20784,https://pmc.ncbi.nlm.nih.gov/articles/instance/5570525/bin/NIHMS70428-supplement-Supplementary_Tables.xlsx,wahl-bmi/european.csv
 wahl-bmi-indian,blood,BMI,10.1038/nature20784,https://pmc.ncbi.nlm.nih.gov/articles/instance/5570525/bin/NIHMS70428-supplement-Supplementary_Tables.xlsx,wahl-bmi/indian.csv
 wahl-bmi,blood,BMI,10.1038/nature20784,https://pmc.ncbi.nlm.nih.gov/articles/instance/5570525/bin/NIHMS70428-supplement-Supplementary_Tables.xlsx,wahl-bmi/combined.csv
