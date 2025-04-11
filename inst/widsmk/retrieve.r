@@ -10,7 +10,12 @@ load(url("https://github.com/chiaraherzog/WID.smk/raw/refs/heads/updated-sites/R
 ## [6] "sigma"        "WID_SMK_cpgs"
 
 dat = WID_SMK_cpgs
+dat = dat[dat$chr != "chrX",]
+
 dat$set = paste0("WID_SMK_", dat$set)
+
+WID_SMK_cpgs <- WID.smk:::WID_SMK_cpgs |>
+    dplyr::filter(chr != "chrX")
 
 for (name in dat$set) {
     in_model = dat$set == name
