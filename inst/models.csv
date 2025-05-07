@@ -455,3 +455,6 @@ il6,blood,IL6,0.1093/gerona/glab046,https://academic.oup.com/biomedgerontology/a
 "waterfield-ADA-FOM1","blood","ADA","10.1101/2024.06.13.24308877","https://www.medrxiv.org/content/medrxiv/early/2024/06/13/2024.06.13.24308877/DC2/embed/media-2.zip?download=true","waterfield/models/ADA_FOM1-coefs.csv"
 "waterfield-TNFB-FOM1","blood","TNFB","10.1101/2024.06.13.24308877","https://www.medrxiv.org/content/medrxiv/early/2024/06/13/2024.06.13.24308877/DC2/embed/media-2.zip?download=true","waterfield/models/TNFB_FOM1-coefs.csv"
 "waterfield-CSF1-FOM1","blood","CSF1","10.1101/2024.06.13.24308877","https://www.medrxiv.org/content/medrxiv/early/2024/06/13/2024.06.13.24308877/DC2/embed/media-2.zip?download=true","waterfield/models/CSF1_FOM1-coefs.csv"
+YingAdaptAge,blood,AdaptAge,10.1038/s43587-023-00557-0,https://raw.githubusercontent.com/albert-ying/biolearn/b332d123e77ffb21d443a9984332afdb88adbb17/biolearn/data/YingAdaptAge.csv,ying/YingAdaptAge.csv
+YingCausAge,blood,CausAge,10.1038/s43587-023-00557-0,https://raw.githubusercontent.com/albert-ying/biolearn/b332d123e77ffb21d443a9984332afdb88adbb17/biolearn/data/YingCausAge.csv,ying/YingCausAge.csv
+YingDamAge,blood,DamAge,10.1038/s43587-023-00557-0,https://raw.githubusercontent.com/albert-ying/biolearn/b332d123e77ffb21d443a9984332afdb88adbb17/biolearn/data/YingDamAge.csv,ying/YingDamAge.csv

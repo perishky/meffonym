@@ -1,0 +1,4 @@
+name,tissue,target,publication,source,filename
+YingAdaptAge,blood,AdaptAge,10.1038/s43587-023-00557-0,https://raw.githubusercontent.com/albert-ying/biolearn/b332d123e77ffb21d443a9984332afdb88adbb17/biolearn/data/YingAdaptAge.csv,ying/YingAdaptAge.csv
+YingCausAge,blood,CausAge,10.1038/s43587-023-00557-0,https://raw.githubusercontent.com/albert-ying/biolearn/b332d123e77ffb21d443a9984332afdb88adbb17/biolearn/data/YingCausAge.csv,ying/YingCausAge.csv
+YingDamAge,blood,DamAge,10.1038/s43587-023-00557-0,https://raw.githubusercontent.com/albert-ying/biolearn/b332d123e77ffb21d443a9984332afdb88adbb17/biolearn/data/YingDamAge.csv,ying/YingDamAge.csv
