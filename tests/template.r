@@ -33,6 +33,10 @@ ret <- meffonym.score(data$dnam, "hannum")
 cor(ret$score, data$samples$Age)
 # [1] 0.8069383
 
+## check meffonym.accel
+accel <- meffonym.accel(data$dnam, "hannum", age = data$samples$Age)
+
+## check dunedinpace score
 packages <- c("preprocessCore") 
 lapply(packages, require, character.only=T)
 # [1] TRUE
@@ -40,3 +44,4 @@ lapply(packages, require, character.only=T)
 ret <- meffonym.score(data$dnam, "dunedinpace")
 dunedin <- meffonym.score(data$dnam, "dunedinpace", calibrate=TRUE)
 dunedin <- meffonym.dunedinpace.estimate(data$dnam)
+
