@@ -10,10 +10,11 @@ meffonym.accel <- function(
     model,
     age,
     calibrate=F,
-    transform=ifelse(model %in% c("horvath","pedbe"), anti.trafo, NULL),
+    scale=model %in% c("zhang","zhang.blup"),
+    transform=NULL,
     adjust=NULL) {
     
-    stopifnot(length(age) == ncol(x))
+    #stopifnot(length(age) == nrow(x))
     
     if (is.null(adjust))
         adjust <- data.frame(age=age)
@@ -22,6 +23,11 @@ meffonym.accel <- function(
         stopifnot(nrow(adjust) == length(age))
         adjust <- cbind(adjust, age=age)
     }
-    meffonym.score(x,model,adjust)$score
+    meffonym.score(
+        x=x,
+        model=model,
+        calibrate=calibrate,
+        scale=scale,
+        transform=transform,
+        adjust=adjust)$score
 }
-
