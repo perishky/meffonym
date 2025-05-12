@@ -13,7 +13,7 @@ meffonym.accel <- function(
     transform=ifelse(model %in% c("horvath","pedbe"), anti.trafo, NULL),
     adjust=NULL) {
     
-    stopifnot(length(age) == nrow(x))
+    stopifnot(length(age) == ncol(x))
     
     if (is.null(adjust))
         adjust <- data.frame(age=age)
