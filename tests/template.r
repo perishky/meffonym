@@ -33,6 +33,16 @@ ret <- meffonym.score(data$dnam, "hannum")
 cor(ret$score, data$samples$Age)
 # [1] 0.8069383
 
+## print the sites not used in the score
+missing.inputs <- ret$vars[!ret$vars %in% ret$sites]
+missing.inputs
+##[1] "intercept"  "cg24079702" "cg14361627" "cg07927379" "cg18473521"
+##[6] "cg09651136" "cg21139312"
+
+ret$coefs[names(ret$coefs) %in% missing.inputs]
+##cg24079702 cg14361627 cg07927379 cg18473521 cg09651136 cg21139312 
+##      2.48      10.70      -1.42       8.85     -15.80      17.10 
+
 ## check meffonym.accel
 accel <- meffonym.accel(data$dnam, "hannum", age = data$samples$Age)
 
