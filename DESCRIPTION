@@ -1,5 +1,5 @@
 Package: meffonym
-Version: 1.2.2
+Version: 1.2.3
 Title: DNA methylation exposure and phenotypic archive
 Description: Algorithms for calculating published DNA methylation biomarkers
 Authors@R: c(person("Matthew", "Suderman", role = c("cre", "aut"),
