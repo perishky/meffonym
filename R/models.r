@@ -76,9 +76,13 @@ load.models <- function(pkgname) {
                 pred.vars <- c("intercept", pred.vars)
                 coefs <- c(0,coefs)
             }
-            intercept <- coefs[1]
-            pred.vars <- pred.vars[-1]
-            coefs <- coefs[-1]
+            idx <- grep("intercept", pred.vars, ignore.case=T)
+            if (length(idx) > 1)
+                warning("Model ", models$name[idx], " has more than one intercept.  Using only the first.")
+            idx <- idx[1]
+            intercept <- coefs[idx]
+            pred.vars <- pred.vars[-idx]
+            coefs <- coefs[-idx]
         }
         else {
             pred.vars <- coefs$pred.var
