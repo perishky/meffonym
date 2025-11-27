@@ -472,3 +472,4 @@ YingDamAge,blood,DamAge,10.1038/s43587-023-00557-0,https://raw.githubusercontent
 "waterfield-ADA-FOM1","blood","ADA","10.1101/2024.06.13.24308877","https://www.medrxiv.org/content/medrxiv/early/2024/06/13/2024.06.13.24308877/DC2/embed/media-2.zip?download=true","waterfield/models/ADA_FOM1-coefs.csv"
 "waterfield-TNFB-FOM1","blood","TNFB","10.1101/2024.06.13.24308877","https://www.medrxiv.org/content/medrxiv/early/2024/06/13/2024.06.13.24308877/DC2/embed/media-2.zip?download=true","waterfield/models/TNFB_FOM1-coefs.csv"
 "waterfield-CSF1-FOM1","blood","CSF1","10.1101/2024.06.13.24308877","https://www.medrxiv.org/content/medrxiv/early/2024/06/13/2024.06.13.24308877/DC2/embed/media-2.zip?download=true","waterfield/models/CSF1_FOM1-coefs.csv"
+wu,blood,age,10.1038/s43587-023-00557-0,https://www.aging-us.com/article/102399/supplementary/SD3/0/aging-v11i22-102399-supplementary-material-SD3.xlsx,wu/coefs.csv
