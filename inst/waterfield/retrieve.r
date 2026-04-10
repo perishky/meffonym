@@ -16,6 +16,8 @@ dir.create("models")
 models <- do.call(rbind, lapply(sets, function(filename) {
     coefs <- read.csv(filename)
     coefs$Variable <- sub("\\(intercept\\)", "intercept", coefs$Variable,ignore.case=T)
+    if (grepl("450K",filename))
+        coefs$Protein <- paste0(coefs$Protein, "_450K")    
     coefs[,c("Variable","Coefficient","Protein")]
 }))
 
@@ -32,7 +34,7 @@ proteins <- unique(models$Protein)
 
 write.csv(
     data.frame(
-        name=paste("waterfield",sub("_","-",proteins),sep="-"),
+        name=paste("waterfield",gsub("_","-",proteins),sep="-"),
         tissue="blood",
         target=sub("_.*", "", proteins),
         publication="10.1101/2024.06.13.24308877",

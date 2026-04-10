@@ -1,9 +1,0 @@
-
-........................
-meffonym.ieaa <- function(x, model="horvath", age, naive CD8+ T cells, exhausted CD8+ T cells, plasmablasts, CD4+ T cells, natural killer cells, monocytes, and granulocytes)  (the first 3 cell types estimated 'the horvath way')
-meffonym.eeaa <- function(x, model="hannum", age, naïve (CD45RA+CCR7+) cytotoxic T cells, exhausted (CD28-CD45RA-) cytotoxic T cells, plasmablasts)
-    resid(hannum ~ age) + naive + exhausted + pb  (estimated 'the horvath way')
-## https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5076441/
-## horvath way is mentioned here https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5076441/#s4_4title
-## and described here but not actually described at all: https://www.ncbi.nlm.nih.gov/pubmed/25969563/
-## The extra cell type references haven't been published.

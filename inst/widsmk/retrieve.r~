@@ -1,0 +1,5 @@
+
+load(url("https://github.com/chiaraherzog/WID.smk/raw/refs/heads/updated-sites/R/sysdata.rda"))
+
+[1] "df"           "models_exsmk" "models_nsmk"  "models_smk"   "mu"          
+[6] "sigma"        "WID_SMK_cpgs"
