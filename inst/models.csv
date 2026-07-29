@@ -907,4 +907,4 @@ xu2025-v4pl,blood,"VLDL subclass 4 phospholipids, V4PL",10.1111/acel.14484,https
 xu2025-v5pl,blood,"VLDL subclass 5 phospholipids, V5PL",10.1111/acel.14484,https://github.com/Kexin-xu-01/DNAm-metabolic-age/blob/main/CpG_to_DNAm_metabolite.csv,mar-talens/XuK_2025/Xu2025_V5PL.csv
 xu2025-zeta-carotene,blood,zeta-carotene,10.1111/acel.14484,https://github.com/Kexin-xu-01/DNAm-metabolic-age/blob/main/CpG_to_DNAm_metabolite.csv,mar-talens/XuK_2025/Xu2025_zeta_carotene.csv
 wu,blood,age,10.1038/s43587-023-00557-0,https://www.aging-us.com/article/102399/supplementary/SD3/0/aging-v11i22-102399-supplementary-material-SD3.xlsx,wu/coefs.csv
-
+bbdmm,blood,lung cancer,10.1186/s12916-026-04973-y,https://pmc.ncbi.nlm.nih.gov/articles/PMC13242670/#Tab2,bbdmm/bbdmm.csv
